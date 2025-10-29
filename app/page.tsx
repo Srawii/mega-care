@@ -47,22 +47,22 @@ export default function LandingPage(){
       <section className="relative overflow-hidden">
         <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-amber-300/30 blur-3xl"/>
         <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-emerald-300/30 blur-3xl"/>
-        <div className="max-w-6xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-10 items-center">
-          <div className="relative">
-            <div className="aspect-[3/4] rounded-3xl bg-gradient-to-b from-amber-200 to-emerald-200 shadow-xl grid place-items-center">
-              <img alt="Mega Care Multi Vitamin PLUS" src="/image/product.png" className="h-full w-full object-cover rounded-3xl"/>
+        <div className="max-w-6xl mx-auto px-4 py-14 grid md:grid-cols-2 items-center">
+          <div className="relative w-100 justify-center" style={{marginTop: "-8%"}}>
+            <div className="aspect-[3/4] rounded-3xl bg-gradient-to-b from-amber-100 to-emerald-100 shadow-xl grid place-items-center h-100 w-100">
+              <img alt="Mega Care Multi Vitamin PLUS" src="/image/product.png" className="h-100 w-70 rounded-3xl"/>
             </div>
           </div>
-          <div style={{marginTop: "-10%"}}>
-            <div className="mt-6 flex flex-wrap gap-3" >
+          <div style={{marginTop: "-5%"}}>
+            <div className="mt-6 flex flex-wrap justify-center" >
               <a href="https://www.lazada.co.th/products/i5740995305.html?spm=a1zawg.24863640.table_online_product.1.47691e136FPmON">
-                <img alt="Lazada" src="/image/lazada.png" width={120} height={90}/>
+                <img alt="Lazada" src="/image/lazada.png" className="w-50 sm:w-40 md:w-44 h-24 object-contain"/>
               </a>
               <a href="https://th.shp.ee/MypeHXM">
-                <img alt="Shopee" src="/image/shopee.png" width={120} height={90}/>
+                <img alt="Shopee" src="/image/shopee.png" className="w-50 sm:w-40 md:w-44 h-24 object-contain"/>
               </a>
               <a href="https://vt.tiktok.com/ZSHvwJxX9okEQ-0iP0K/">
-                <img alt="Tiktok" src="/image/tiktok.png" width={120} height={90}/>
+                <img alt="Tiktok" src="/image/tiktok.png" className="w-50 sm:w-40 md:w-44 h-24 object-contain"/>
               </a>
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight" style={{fontSize: "1.95rem"}}>
@@ -72,10 +72,16 @@ export default function LandingPage(){
             <p className="text-muted-foreground mt-4 text-lg">
               Mega Care Multi Vitamin PLUS รวมวิตามินและแร่ธาตุสำคัญ <strong>15 ชนิด</strong> ในรูปแบบดริ้งช็อต รสส้ม ดื่มง่าย พกสะดวก ผลิตตามมาตรฐาน GMP / GHPs / HACCP และขึ้นทะเบียน อย. <span className="font-semibold">74-1-07455-5-1204</span>
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <div className="inline-flex items-center gap-2 rounded-2xl bg-white shadow px-3 py-2"><Shield className="h-4 w-4 text-emerald-600"/>GMP/HACCP</div>
-              <div className="inline-flex items-center gap-2 rounded-2xl bg-white shadow px-3 py-2"><Sparkles className="h-4 w-4 text-amber-600"/>รสส้ม ดื่มง่าย</div>
-              <div className="inline-flex items-center gap-2 rounded-2xl bg-white shadow px-3 py-2"><Package className="h-4 w-4 text-sky-600"/>15 กรัม × 10 ซอง</div>
+            <div className="mt-6 flex flex-wrap justify-center gap-2">
+              <div className="inline-flex items-center gap-2 rounded-2xl bg-white shadow px-4 py-2">
+                <Shield className="h-5 w-5 text-emerald-600" /> GMP/HACCP
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-2xl bg-white shadow px-4 py-2">
+                <Sparkles className="h-5 w-5 text-amber-600" /> รสส้ม ดื่มง่าย
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-2xl bg-white shadow px-4 py-2">
+                <Package className="h-5 w-5 text-sky-600" /> 15 กรัม × 10 ซอง
+              </div>
             </div>
           </div>
         </div>
@@ -158,7 +164,7 @@ export default function LandingPage(){
                   {n:"Folic Acid (วิตามิน B9 - กรดโฟลิก)", a:"0.20 มก."},
                   {n:"D-Biotin (วิตามิน B7 - ไบดอติน)", a:"0.15 มก."},
                 ].map((x,i)=> (
-                  <li key={i} className="flex items-center justify-between gap-4 border-b last:border-none pb-2">
+                  <li key={i} className="flex items-left justify-between gap-4 border-b last:border-none pb-2">
                     <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-emerald-600"/>{x.n}</span>
                     <span className="text-slate-600 tabular-nums">{x.a}</span>
                   </li>
