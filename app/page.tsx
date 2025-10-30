@@ -66,7 +66,7 @@ export default function LandingPage(){
               </a>
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight" style={{fontSize: "1.95rem"}}>
-              Mega Care วิตามินพร้อมดื่ม
+              Mega Care วิตามินพร้อมดื่ม555
               <span className="block text-emerald-700">ฉีก-ดื่ม-จบ ครบในซองเดียว</span>
             </h1>
             <p className="text-muted-foreground mt-4 text-lg">
