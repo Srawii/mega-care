@@ -41,6 +41,18 @@ export default function LandingPage(){
             <a href="#faq" className="hover:text-emerald-700">FAQ</a>
           </nav>
         </div>
+        
+        <script type="text/javascript" src="https://app.adtechthai.com/js/1.0/adtech-tracker.js" ></script>
+    <script> 
+      if( document.readyState === "complete" ||document.readyState === "interactive" ) { 
+        adTechTrackerInit("rqhY3MysIngzm4Sqvno2x4C3qqUiFxqL");
+      } else {
+        document.addEventListener("DOMContentLoaded", function(event) { 
+          adTechTrackerInit("rqhY3MysIngzm4Sqvno2x4C3qqUiFxqL"); 
+        }); 
+      }
+    </script>
+        
       </header>
 
       {/* HERO */}
