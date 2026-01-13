@@ -58,7 +58,7 @@ export default function LandingPage(){
               <a href="https://www.lazada.co.th/products/i5740995305.html?spm=a1zawg.24863640.table_online_product.1.47691e136FPmON">
                 <img alt="Lazada" src="/image/lazada.png" className="w-50 sm:w-40 md:w-44 h-24 object-contain"/>
               </a>
-              <a href="https://th.shp.ee/MypeHXM">
+              <a href="https://s.shopee.co.th/7VA67h2bky">
                 <img alt="Shopee" src="/image/shopee.png" className="w-50 sm:w-40 md:w-44 h-24 object-contain"/>
               </a>
               <a href="https://vt.tiktok.com/ZSHvwJxX9okEQ-0iP0K/">
