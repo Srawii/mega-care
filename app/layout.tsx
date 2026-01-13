@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -24,35 +25,53 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <script type="text/javascript" src="https://app.adtechthai.com/js/1.0/adtech-tracker.js" ></script>
-        <script> 
-          if( document.readyState === "complete" ||document.readyState === "interactive" ) { 
-            adTechTrackerInit("rqhY3MysIngzm4Sqvno2x4C3qqUiFxqL");
-          } else {
-            document.addEventListener("DOMContentLoaded", function(event) { 
-              adTechTrackerInit("rqhY3MysIngzm4Sqvno2x4C3qqUiFxqL"); 
-            }); 
-          }
-        </script>
-        <!-- Meta Pixel Code -->
-        <script>
-          !function(f,b,e,v,n,t,s)
-          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-          n.queue=[];t=b.createElement(e);t.async=!0;
-          t.src=v;s=b.getElementsByTagName(e)[0];
-          s.parentNode.insertBefore(t,s)}(window, document,'script',
-          'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '1460124498614851');
-          fbq('track', 'PageView');
-        </script>
-        <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1460124498614851&ev=PageView&noscript=1"/></noscript>
-        <!-- End Meta Pixel Code -->
-      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
+
+        {/* ✅ AdTech Tracker */}
+        <Script
+          src="https://app.adtechthai.com/js/1.0/adtech-tracker.js"
+          strategy="afterInteractive"
+        />
+        <Script id="adtech-init" strategy="afterInteractive">
+          {`
+            if (document.readyState === "complete" || document.readyState === "interactive") {
+              adTechTrackerInit("rqhY3MysIngzm4Sqvno2x4C3qqUiFxqL");
+            } else {
+              document.addEventListener("DOMContentLoaded", function() {
+                adTechTrackerInit("rqhY3MysIngzm4Sqvno2x4C3qqUiFxqL");
+              });
+            }
+          `}
+        </Script>
+
+        {/* ✅ Meta Pixel Code */}
+        <Script id="facebook-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s){
+              if(f.fbq) return;
+              n=f.fbq=function(){
+                n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+              };
+              if(!f._fbq) f._fbq=n;
+              n.push=n; n.loaded=!0; n.version='2.0';
+              n.queue=[];
+              t=b.createElement(e); t.async=!0;
+              t.src=v; s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)
+            }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1460124498614851');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1460124498614851&ev=PageView&noscript=1"
+          />
+        </noscript>
       </body>
     </html>
   );
